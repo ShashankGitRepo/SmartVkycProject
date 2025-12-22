@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in - Smart VKYC</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">  
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="logo-container">
+             <svg fill="#1a73e8" height="32px" viewBox="0 0 24 24" focusable="false"><path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V13H5v-2h7v-2.99z"></path></svg>
+        </div>
+
+        <div class="form-header">
+            <h1>Sign in</h1>
+            <p>Use your Smart VKYC Account</p>
+        </div>
+
+        <form id="login-form">
+            <div class="input-group">
+                <input type="email" id="email" name="email" class="input-field" placeholder="Email or phone" required>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="password" name="password" class="input-field" placeholder="Enter your password" required>
+            </div>
+
+            <div class="actions">
+                <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+
+            <div class="error-message" id="login-error-message" style="display: none; color: #d93025; font-size: 14px; margin-bottom: 15px;"></div>
+
+            <div class="button-container">
+                <a href="/signup" class="button button-secondary">Create account</a>
+                <button type="submit" class="button button-primary">Next</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+
+</body>
+</html>

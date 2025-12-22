@@ -1,0 +1,45 @@
+# --- Core Framework --- #
+fastapi[all]>=0.111.0
+uvicorn>=0.30.0
+
+# --- Authentication & Security --- #
+bcrypt>=5.0.0
+python-jose[jwt]>=3.3.0
+python-dotenv>=1.0.0
+
+# --- Database (MySQL) --- #
+mysql-connector-python>=8.4.0
+SQLAlchemy>=2.0.0
+
+# --- ML - Core Deep Learning (PyTorch for Transformers) --- #
+torch>=2.4.0
+torchvision>=0.19.0
+transformers>=4.42.0
+
+# --- ML - TensorFlow Stack (Specific versions for Python 3.11/Apple Silicon/DeepFace compatibility) --- #
+tensorflow-macos==2.16.1
+tensorflow-metal==1.2.0
+tf-keras==2.16.0
+numpy>=1.26.0,<2.0.0
+
+# --- ML - Computer Vision & Face Processing --- #
+opencv-python==4.9.0.80
+dlib>=19.24.0
+deepface>=0.0.94
+mtcnn>=0.1.1
+
+# --- ML - OCR & QR Code --- #
+pytesseract>=0.3.10
+pyzbar>=0.1.9
+lxml>=5.2.0 
+
+# --- Image Handling --- #
+Pillow>=10.4.0
+
+# --- Utilities --- #
+werkzeug>=3.0.0
+setuptools>=69.0.0
+
+# --- Video Calling --- #
+agora_utils==3.0.0
+agora-token-builder==1.0.0

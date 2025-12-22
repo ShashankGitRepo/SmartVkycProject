@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Smart VKYC</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">  
+</head>
+<body>
+
+    <div class="profile-container">
+        <div class="header">
+            <h1>Your Smart VKYC Profile</h1>
+            <p>Manage your personal information and settings.</p>
+        </div>
+
+        <div class="profile-section">
+            <h2 class="section-header">Profile Picture</h2>
+            <div class="profile-picture-container">
+                <div class="profile-picture">
+                    <span class="initials">?</span>
+                </div>
+                <button class="upload-button" onclick="document.getElementById('profilePictureInput').click()">Change Photo</button>
+                <input type="file" id="profilePictureInput" style="display: none;" accept="image/*">
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <h2 class="section-header">Basic Information</h2>
+            <form id="profile-form">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <input type="text" id="firstName" class="input-field" placeholder=" " required>
+                        <label for="firstName" class="input-label">First Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="lastName" class="input-field" placeholder=" " required>
+                        <label for="lastName" class="input-label">Last Name</label>
+                    </div>
+                    
+                    <div class="input-group full-width">
+                        <input type="email" id="email" class="input-field" placeholder=" " readonly>
+                        <label for="email" class="input-label">Email</label>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <input type="tel" id="phone" class="input-field" placeholder=" ">
+                        <label for="phone" class="input-label">Phone Number</label>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <input type="date" id="dob" class="input-field" placeholder=" ">
+                        <label for="dob" class="input-label">Date of Birth</label>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="button button-secondary" onclick="window.location.href='/dashboard'">Cancel</button>
+                    <button type="submit" class="button button-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="profile-section">
+            <h2 class="section-header">Security</h2>
+            <form id="password-form">
+                <div class="form-grid full-width">
+                    <div class="input-group">
+                        <input type="password" id="currentPassword" class="input-field" placeholder=" ">
+                        <label for="currentPassword" class="input-label">Current Password</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="newPassword" class="input-field" placeholder=" ">
+                        <label for="newPassword" class="input-label">New Password</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="confirmNewPassword" class="input-field" placeholder=" ">
+                        <label for="confirmNewPassword" class="input-label">Confirm New Password</label>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="button button-secondary">Clear</button>
+                    <button type="submit" class="button button-primary">Change Password</button>
+                </div>
+            </form>
+        </div>
+
+        <button class="back-button" onclick="window.location.href='/dashboard'" title="Back to Dashboard">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+            </svg>
+        </button>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+
+</body>
+</html>

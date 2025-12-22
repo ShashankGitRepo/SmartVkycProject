@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="backend-url" content="">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Call - Smart VKYC</title>
+    <script src="https://download.agora.io/sdk/release/AgoraRTC_N-4.22.0.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@500&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/call.css') }}">  
+</head>
+<body>
+    
+    <div id="verification-panel" class="overlay-panel">
+        <h3>Verification Monitor</h3>
+        <div class="metric">
+            <span>Liveness (EAR):</span>
+            <span id="liveness-score" class="score">--</span>
+        </div>
+        <div class="metric">
+            <span>Deepfake Score:</span>
+            <span id="deepfake-score" class="score">--</span>
+        </div>
+        <div class="metric">
+            <span>Face Match:</span>
+            <span id="facematch-score" class="score">--</span>
+        </div>
+        <div id="alert-box" class="alert" style="display:none;">ALERT!</div>
+    </div>
+
+    <div class="call-container">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <span id="channel-display">Meeting: <span id="channel-name-display">Connecting...</span></span>
+            <span id="call-timer">00:00</span>
+        </div>
+
+        <!-- Video Grid -->
+        <div id="video-grid" class="video-grid">
+            <!-- Local User Tile -->
+            <div id="local-user-tile" class="participant-tile">
+                <div id="local-player"></div>
+                <div class="participant-name">You (<span id="local-user-id">...</span>)</div>
+            </div>
+        </div>
+
+        <div class="control-bar">
+            <button id="micBtn" class="control-button" title="Mute Microphone" disabled>
+                <img class="icon-mic-on" src="{{ url_for('static', filename='images/mic-on.svg') }}" alt="Mic On">
+                <img class="icon-mic-off" src="{{ url_for('static', filename='images/mic-off.svg') }}" alt="Mic Off">
+            </button>
+
+            <button id="camBtn" class="control-button" title="Toggle Camera" disabled>
+                <img class="icon-cam-on" src="{{ url_for('static', filename='images/cam-on.svg') }}" alt="Camera On">
+                <img class="icon-cam-off" src="{{ url_for('static', filename='images/cam-off.svg') }}" alt="Camera Off">
+            </button>
+            
+            <button id="screenShareBtn" class="control-button" title="Share Screen" disabled>
+                <img class="icon-screen-off" src="{{ url_for('static', filename='images/screen-share-off.svg') }}" alt="Share Screen">
+                <img class="icon-screen-on" src="{{ url_for('static', filename='images/screen-share-on.svg') }}" alt="Stop Sharing">
+            </button>
+
+            <button id="leaveBtn" class="control-button end-call" title="Leave Call" disabled>
+                <img src="{{ url_for('static', filename='images/leave-call.svg') }}" alt="Leave">
+            </button>
+        </div>
+    </div>
+
+    <script>window.BACKEND_URL = "{{ backend_url | default('') }}";</script>
+    
+    <script src="{{ url_for('static', filename='js/call.js') }}"></script>
+</body>
+</html>

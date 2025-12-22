@@ -1,0 +1,15 @@
+# Environment variables #
+.env
+**/.env
+**/.env.local
+
+# Node.js (for frontend) #
+node_modules/
+.next/
+npm-debug.log*
+yarn-error.log*
+
+# Python (for backend) #
+venv/
+__pycache__/
+*.pyc

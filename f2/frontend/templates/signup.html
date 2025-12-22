@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Smart VKYC</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <style>
+        .input-group.inline {
+            display: flex;
+            gap: 10px;
+        }
+        .hint-text {
+            font-size: 12px;
+            color: #5f6368;
+            text-align: left;
+            margin-top: 4px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container" style="max-width: 450px;">
+        <div class="logo-container">
+             <svg fill="#1a73e8" height="32px" viewBox="0 0 24 24" focusable="false"><path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V13H5v-2h7v-2.99z"></path></svg>
+        </div>
+
+        <div class="form-header">
+            <h1>Create your Account</h1>
+            <p>to continue to Smart VKYC</p>
+        </div>
+
+        <form id="signup-form">
+             <div class="input-group inline">
+                <input type="text" id="first-name" name="first-name" class="input-field" placeholder="First name" required>
+                <input type="text" id="last-name" name="last-name" class="input-field" placeholder="Last name" required>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="email" name="email" class="input-field" placeholder="Email" required>
+            </div>
+
+            <div class="input-group inline">
+                <input type="password" id="password" name="password" class="input-field" placeholder="Password" required minlength="8">
+                <input type="password" id="confirm-password" name="confirm-password" class="input-field" placeholder="Confirm" required minlength="8">
+            </div>
+            <div class="hint-text">Use 8 or more characters with a mix of letters, numbers & symbols.</div>
+
+            <div class="button-container">
+                <a href="/login" class="button button-secondary">Sign in instead</a>
+                <button type="submit" class="button button-primary">Next</button>
+            </div>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/signup.js') }}"></script>
+</body>
+</html>
